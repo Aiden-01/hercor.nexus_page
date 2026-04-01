@@ -620,7 +620,6 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
     min-height: 100vh;
-    overflow-x: hidden;
   }
 
   .hn-root::before {
