@@ -1092,9 +1092,11 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .hn-title {
-      font-size: clamp(2rem, 11vw, 3.5rem);
-    }
+  .hn-title {
+    font-size: clamp(1.6rem, 8vw, 2.8rem);
+    letter-spacing: -.02em;
+    word-break: break-all;
+  }
     .hn-hero {
       padding: 5rem 1.25rem 3rem;
     }
