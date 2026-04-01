@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter, Navigate } from 'react-router-dom';
 import { Portafolio } from '../components/Portafolio';
 import { Curriculum } from '../components/Curriculum';  
 import { Contacto } from '../components/Contacto';
@@ -10,13 +10,11 @@ import { Servicios } from '../components/Servicios';
 
 export const Rutas = () => {
   return (
-    <BrowserRouter>
-      {/* Header de navegación */}
+    <HashRouter>
       <HeaderNav />
-
-      {/* Contenido de las rutas */}
       <section>
         <Routes>
+          <Route path="/" element={<Navigate to="/inicio" replace />} />
           <Route path="/inicio" element={<Inicio />} />
           <Route path="/portafolio" element={<Portafolio />} />
           <Route path="/curriculum" element={<Curriculum />} />
@@ -24,9 +22,7 @@ export const Rutas = () => {
           <Route path="/servicios" element={<Servicios />} />
         </Routes>
       </section>
-
-      {/* Footer */}
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
