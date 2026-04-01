@@ -1,0 +1,11 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  background: #080810;
+  min-height: 100vh;
+  color: #f0f0f8;
+}
