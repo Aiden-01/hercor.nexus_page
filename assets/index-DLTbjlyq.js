@@ -684,10 +684,10 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     50% { opacity: .4; }
   }
 
-  .hn-title {
+.hn-title {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: clamp(3rem, 9vw, 7rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
     line-height: 1.0;
     letter-spacing: -.03em;
     animation: fadeUp .7s .1s ease both;
