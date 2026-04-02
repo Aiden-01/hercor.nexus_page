@@ -190,7 +190,7 @@ export const Contacto = () => {
                 <div className="ct-contact-icon">📧</div>
                 <div>
                   <div className="ct-contact-label">Email</div>
-                  <div className="ct-contact-val"><a href="mailto:hola@hercor.nexus">hola@hercor.nexus</a></div>
+                  <div className="ct-contact-val"><a href="mailto:hercor.nexus@gmail.com">hercor.nexus@gmail.com</a></div>
                 </div>
               </div>
               <div className="ct-contact-item">
