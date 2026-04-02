@@ -103,7 +103,7 @@ Please change the parent <Route path="${Y}"> to <Route path="${Y==="/"?"*":`${Y}
 
   .pf-hero-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 800; line-height: 1.05; letter-spacing: -.03em;
     margin-bottom: 1rem;
   }
@@ -237,7 +237,7 @@ Please change the parent <Route path="${Y}"> to <Route path="${Y==="/"?"*":`${Y}
   }
   .pf-cta-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 800; letter-spacing: -.02em; margin-bottom: .75rem;
   }
   .pf-cta-sub { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; font-weight: 300; }
@@ -292,7 +292,7 @@ Please change the parent <Route path="${Y}"> to <Route path="${Y==="/"?"*":`${Y}
 
   .cv-hero-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 800; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 1rem;
   }
   .cv-hero-title span {
@@ -430,7 +430,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   .ct-hero-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 800; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 1rem;
   }
   .ct-hero-title span {
@@ -1062,7 +1062,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   .hn-cta-inner { position: relative; z-index: 1; }
   .hn-cta-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -.02em;
@@ -1212,7 +1212,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   .sv-hero-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 800; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 1rem;
   }
   .sv-hero-title span {
@@ -1331,7 +1331,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
   .sv-cta-title {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 800; letter-spacing: -.02em; margin-bottom: .75rem;
     position: relative; z-index: 1;
   }
