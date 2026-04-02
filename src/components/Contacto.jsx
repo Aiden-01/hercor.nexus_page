@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useForm } from '@formspree/react';
 
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap');
@@ -114,6 +115,8 @@ const css = `
   .ct-success-title { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: .5rem; }
   .ct-success-sub { color: var(--muted); font-size: .95rem; }
 
+  .ct-error { color: #f87171; font-size: .8rem; margin-top: .3rem; }
+
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
   .hn-reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s, transform .65s; }
   .hn-reveal.visible { opacity: 1; transform: none; }
@@ -138,10 +141,9 @@ function useReveal() {
 
 export const Contacto = () => {
   useReveal();
-  const [form, setForm] = useState({ nombre: '', apellido: '', email: '', empresa: '', mensaje: '' });
+  const [state, handleFormspree] = useForm('xjgpelov');
   const [selectedServices, setSelectedServices] = useState([]);
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ nombre: '', apellido: '', email: '', empresa: '', mensaje: '' });
 
   const toggle = s => setSelectedServices(prev =>
     prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]
@@ -151,10 +153,14 @@ export const Contacto = () => {
 
   const handleSubmit = async () => {
     if (!form.nombre || !form.email || !form.mensaje) return;
-    setSending(true);
-    await new Promise(r => setTimeout(r, 1500));
-    setSending(false);
-    setSent(true);
+    await handleFormspree({
+      nombre: form.nombre,
+      apellido: form.apellido,
+      email: form.email,
+      empresa: form.empresa,
+      servicios: selectedServices.join(', '),
+      mensaje: form.mensaje,
+    });
   };
 
   return (
@@ -187,7 +193,7 @@ export const Contacto = () => {
                   <div className="ct-contact-val"><a href="mailto:hola@hercor.nexus">hola@hercor.nexus</a></div>
                 </div>
               </div>
-                <div className="ct-contact-item">
+              <div className="ct-contact-item">
                 <div className="ct-contact-icon">💬</div>
                 <div>
                   <div className="ct-contact-label">WhatsApp</div>
@@ -217,7 +223,7 @@ export const Contacto = () => {
           </div>
 
           <div className="ct-form-card">
-            {sent ? (
+            {state.succeeded ? (
               <div className="ct-success">
                 <div className="ct-success-icon">✅</div>
                 <div className="ct-success-title">¡Mensaje enviado!</div>
@@ -263,12 +269,15 @@ export const Contacto = () => {
                     value={form.mensaje} onChange={handleChange}
                   />
                 </div>
+                {state.errors && state.errors.length > 0 && (
+                  <div className="ct-error">Hubo un error al enviar. Intenta de nuevo.</div>
+                )}
                 <button
                   className="ct-submit"
                   onClick={handleSubmit}
-                  disabled={sending || !form.nombre || !form.email || !form.mensaje}
+                  disabled={state.submitting || !form.nombre || !form.email || !form.mensaje}
                 >
-                  {sending ? 'Enviando...' : 'Enviar mensaje →'}
+                  {state.submitting ? 'Enviando...' : 'Enviar mensaje →'}
                 </button>
               </>
             )}
